@@ -2,10 +2,29 @@
   display: flex;
 }
 
-.column {
+.box {
   border: 1px solid black;
   width: 30px;
   height: 30px;
   padding: 0px;
+  display: flex;
+}
+
+#colorPicker {
+  display: flex;
+  flex-direction: column;
+}
+
+.colorRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.colorBox {
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+  padding: 0px;
+  margin-top: 20px;
   display: flex;
 }
