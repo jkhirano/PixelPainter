@@ -1,3 +1,5 @@
+let savedColor;
+
 //canvas
 let canvas = document.createElement("div");
 canvas.id = "canvas";
@@ -14,7 +16,26 @@ for (x = 0; x < 10; x++) {
     let box = document.createElement("div");
     box.className = "box";
     row.appendChild(box);
+
+    box.addEventListener("mousedown", function() {
+      let boxArr = document.getElementsByClassName("box");
+      for (let i = 0; i < boxArr.length; i++) {
+        boxArr[i].addEventListener("mouseover", showColor);
+      }
+      this.style.background = savedColor;
+    });
+
+    box.addEventListener("mouseup", function() {
+      let boxArr = document.getElementsByClassName("box");
+      for (let i = 0; i < boxArr.length; i++) {
+        boxArr[i].removeEventListener("mouseover", showColor);
+      }
+    });
   }
+}
+
+function showColor() {
+  this.style.backgroundColor = savedColor;
 }
 
 //color picker
@@ -29,7 +50,6 @@ for (z = 0; z < 1; z++) {
   colorPicker.appendChild(colorRow);
 
   //boxes
-
   let colors = [
     "Moccasin",
     "salmon",
@@ -42,10 +62,17 @@ for (z = 0; z < 1; z++) {
     "rosyBrown",
     "lightSeaGreen"
   ];
+
   for (a = 0; a < 10; a++) {
     let colorBox = document.createElement("div");
     colorBox.className = "colorBox";
     colorRow.appendChild(colorBox);
     colorBox.style.backgroundColor = colors[a];
+    colorBox.addEventListener("click", storeColor);
+  }
+
+  function storeColor() {
+    savedColor = this.style.backgroundColor;
+    // console.log(savedColor);
   }
 }
