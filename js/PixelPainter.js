@@ -28,10 +28,24 @@ for (z = 0; z < 1; z++) {
   colorRow.className = "colorRow";
   colorPicker.appendChild(colorRow);
 
-  // boxes
+  //boxes
+
+  let colors = [
+    "Moccasin",
+    "salmon",
+    "lavender",
+    "powderBlue",
+    "DarkSlateBlue",
+    "turquoise",
+    "tomato",
+    "tan",
+    "rosyBrown",
+    "lightSeaGreen"
+  ];
   for (a = 0; a < 10; a++) {
     let colorBox = document.createElement("div");
     colorBox.className = "colorBox";
     colorRow.appendChild(colorBox);
+    colorBox.style.backgroundColor = colors[a];
   }
 }
