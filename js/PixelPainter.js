@@ -6,13 +6,13 @@ canvas.id = "canvas";
 pixelPainter.appendChild(canvas);
 
 //rows
-for (x = 0; x < 10; x++) {
+for (x = 0; x < 40; x++) {
   let row = document.createElement("div");
   row.className = "row";
   canvas.appendChild(row);
 
   //boxes
-  for (y = 0; y < 10; y++) {
+  for (y = 0; y < 40; y++) {
     let box = document.createElement("div");
     box.className = "box";
     row.appendChild(box);
@@ -43,27 +43,28 @@ let colorPicker = document.createElement("div");
 colorPicker.id = "colorPicker";
 pixelPainter.appendChild(colorPicker);
 
+let colors = [
+  "Moccasin",
+  "salmon",
+  "lavender",
+  "powderBlue",
+  "DarkSlateBlue",
+  "turquoise",
+  "tomato",
+  "tan",
+  "rosyBrown",
+  "lightSeaGreen"
+];
+
 //row
-for (z = 0; z < 1; z++) {
+for (z = 0; z < 10; z++) {
   let colorRow = document.createElement("div");
   colorRow.className = "colorRow";
   colorPicker.appendChild(colorRow);
 
   //boxes
-  let colors = [
-    "Moccasin",
-    "salmon",
-    "lavender",
-    "powderBlue",
-    "DarkSlateBlue",
-    "turquoise",
-    "tomato",
-    "tan",
-    "rosyBrown",
-    "lightSeaGreen"
-  ];
 
-  for (a = 0; a < 10; a++) {
+  for (a = 0; a < 2; a++) {
     let colorBox = document.createElement("div");
     colorBox.className = "colorBox";
     colorRow.appendChild(colorBox);
@@ -76,3 +77,62 @@ for (z = 0; z < 1; z++) {
     // console.log(savedColor);
   }
 }
+
+//clear button & function
+let clearButton = document.createElement("button");
+clearButton.id = "clear";
+clearButton.innerHTML = "Clear";
+canvas.appendChild(clearButton);
+
+clearButton.addEventListener("click", clearCanvas);
+
+function clearCanvas() {
+  let boxArr = document.getElementsByClassName("box");
+  for (let i = 0; i < boxArr.length; i++) {
+    boxArr[i].style.background = "none";
+  }
+}
+
+//delete button & function
+let deleteButton = document.createElement("button");
+deleteButton.id = "delete";
+deleteButton.innerHTML = "Delete";
+canvas.appendChild(deleteButton);
+
+deleteButton.addEventListener("click", deleteColor);
+
+// deleteButton.addEventListener("mousedown", function() {
+//   let boxArr = document.getElementsByClassName("box");
+//   for (let i = 0; i < boxArr.length; i++) {
+//     boxArr[i].addEventListener("mouseover", deleteColor);
+//   }
+
+// //   this.style.background = "none";
+//   //   savedColor = "none";
+// });
+
+// box.addEventListener("mouseup", function() {
+//   let boxArr = document.getElementsByClassName("box");
+//   for (let i = 0; i < boxArr.length; i++) {
+//     boxArr[i].removeEventListener("mouseover", deleteColor);
+//   }
+// });
+
+function deleteColor() {
+  savedColor = "none";
+}
+
+// box.addEventListener("mousedown", function () {
+//     let boxArr = document.getElementsByClassName("box");
+//     for (let i = 0; i < boxArr.length; i++) {
+//         boxArr[i].addEventListener("mouseover", showColor);
+//     }
+//     this.style.background = savedColor;
+// });
+
+// box.addEventListener("mouseup", function () {
+//     let boxArr = document.getElementsByClassName("box");
+//     for (let i = 0; i < boxArr.length; i++) {
+//         boxArr[i].removeEventListener("mouseover", showColor);
+//     }
+// });

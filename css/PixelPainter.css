@@ -1,12 +1,32 @@
+body {
+  background: url("https://i.redd.it/izptoyn7i4uz.gif");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  font-family: "Press Start 2P", cursive;
+}
+
+h1 {
+  color: white;
+}
+
+#canvas {
+  background-color: white;
+  border: 1px solid blue;
+  width: 500px;
+  float: right;
+  /* margin: 20px; */
+  padding: 20px;
+  align-content: center;
+}
+
 .row {
   display: flex;
 }
 
 .box {
   border: 1px solid black;
-  width: 30px;
-  height: 30px;
-  padding: 0px;
+  width: 10px;
+  height: 10px;
   display: flex;
 }
 
@@ -22,9 +42,12 @@
 
 .colorBox {
   border: 1px solid black;
-  width: 30px;
-  height: 30px;
-  padding: 0px;
-  margin-top: 20px;
+  width: 35px;
+  height: 35px;
+  margin-top: 10px;
+  margin-right: 10px;
   display: flex;
+}
+
+#clear {
 }
