@@ -2,7 +2,8 @@ body {
   background: url("https://i.redd.it/izptoyn7i4uz.gif");
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  font-family: "Press Start 2P", cursive;
+  font-family: "Syncopate", sans-serif;
+  text-transform: capitalize;
 }
 
 h1 {
@@ -11,12 +12,11 @@ h1 {
 
 #canvas {
   background-color: white;
-  border: 1px solid blue;
-  width: 500px;
+  border: 1px solid black;
+  width: 450px;
   float: right;
-  /* margin: 20px; */
   padding: 20px;
-  align-content: center;
+  align-items: center;
 }
 
 .row {
@@ -33,6 +33,9 @@ h1 {
 #colorPicker {
   display: flex;
   flex-direction: column;
+  float: right;
+  background-color: white;
+  border: 1px solid black;
 }
 
 .colorRow {
@@ -46,8 +49,26 @@ h1 {
   height: 35px;
   margin-top: 10px;
   margin-right: 10px;
+  margin-left: 10px;
   display: flex;
+  flex-direction: column;
 }
 
 #clear {
+  margin-top: 5px;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-family: "Syncopate", sans-serif;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+#delete {
+  margin-top: 5px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  font-family: "Syncopate", sans-serif;
+  text-transform: capitalize;
+  font-weight: bold;
 }

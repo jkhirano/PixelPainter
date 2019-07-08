@@ -63,7 +63,6 @@ for (z = 0; z < 10; z++) {
   colorPicker.appendChild(colorRow);
 
   //boxes
-
   for (a = 0; a < 2; a++) {
     let colorBox = document.createElement("div");
     colorBox.className = "colorBox";
@@ -74,7 +73,6 @@ for (z = 0; z < 10; z++) {
 
   function storeColor() {
     savedColor = this.style.backgroundColor;
-    // console.log(savedColor);
   }
 }
 
@@ -82,7 +80,7 @@ for (z = 0; z < 10; z++) {
 let clearButton = document.createElement("button");
 clearButton.id = "clear";
 clearButton.innerHTML = "Clear";
-canvas.appendChild(clearButton);
+colorPicker.appendChild(clearButton);
 
 clearButton.addEventListener("click", clearCanvas);
 
@@ -97,7 +95,7 @@ function clearCanvas() {
 let deleteButton = document.createElement("button");
 deleteButton.id = "delete";
 deleteButton.innerHTML = "Delete";
-canvas.appendChild(deleteButton);
+colorPicker.appendChild(deleteButton);
 
 deleteButton.addEventListener("click", deleteColor);
 
@@ -121,18 +119,3 @@ deleteButton.addEventListener("click", deleteColor);
 function deleteColor() {
   savedColor = "none";
 }
-
-// box.addEventListener("mousedown", function () {
-//     let boxArr = document.getElementsByClassName("box");
-//     for (let i = 0; i < boxArr.length; i++) {
-//         boxArr[i].addEventListener("mouseover", showColor);
-//     }
-//     this.style.background = savedColor;
-// });
-
-// box.addEventListener("mouseup", function () {
-//     let boxArr = document.getElementsByClassName("box");
-//     for (let i = 0; i < boxArr.length; i++) {
-//         boxArr[i].removeEventListener("mouseover", showColor);
-//     }
-// });
