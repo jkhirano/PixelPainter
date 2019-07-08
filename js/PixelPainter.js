@@ -44,16 +44,26 @@ colorPicker.id = "colorPicker";
 pixelPainter.appendChild(colorPicker);
 
 let colors = [
-  "Moccasin",
-  "salmon",
-  "lavender",
-  "powderBlue",
-  "DarkSlateBlue",
-  "turquoise",
-  "tomato",
-  "tan",
-  "rosyBrown",
-  "lightSeaGreen"
+  "red",
+  "pink",
+  "purple",
+  "RebeccaPurple",
+  "indigo",
+  "blue",
+  "lightBlue",
+  "cyan",
+  "teal",
+  "green",
+  "lightGreen",
+  "lime",
+  "yellow",
+  "coral",
+  "orange",
+  "orangeRed",
+  "brown",
+  "grey",
+  "LightSlateGray",
+  "black"
 ];
 
 //row
@@ -67,7 +77,7 @@ for (z = 0; z < 10; z++) {
     let colorBox = document.createElement("div");
     colorBox.className = "colorBox";
     colorRow.appendChild(colorBox);
-    colorBox.style.backgroundColor = colors[a];
+    colorBox.style.backgroundColor = colors[z * 2 + a];
     colorBox.addEventListener("click", storeColor);
   }
 
