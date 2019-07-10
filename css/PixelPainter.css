@@ -4,11 +4,12 @@ body {
   background-size: 100% 100%;
   font-family: "Syncopate", sans-serif;
   text-transform: capitalize;
-}
-
-h1 {
   color: white;
 }
+
+/* h1 {
+  color: white;
+} */
 
 #canvas {
   background-color: white;
@@ -55,23 +56,16 @@ h1 {
   flex-direction: column;
 }
 
-#clear {
-  padding: 2px;
-  margin-top: 5px;
-  margin-right: 10px;
-  margin-left: 10px;
+button {
   font-family: "Syncopate", sans-serif;
   text-transform: capitalize;
   font-weight: bold;
-}
-
-#erase {
-  padding: 2px;
+  padding: 5px;
   margin-top: 5px;
   margin-right: 10px;
   margin-left: 10px;
   margin-bottom: 5px;
-  font-family: "Syncopate", sans-serif;
-  text-transform: capitalize;
-  font-weight: bold;
+  border-radius: 4px;
+  color: white;
+  background-color: #780854;
 }

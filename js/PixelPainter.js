@@ -106,30 +106,52 @@ let eraseButton = document.createElement("button");
 eraseButton.id = "erase";
 eraseButton.innerHTML = "Erase";
 colorPicker.appendChild(eraseButton);
-eraseButton.style.background = "none";
 eraseButton.addEventListener("click", eraseColor);
 
 function eraseColor() {
   savedColor = "white";
 }
 
-// deleteButton.addEventListener("mousedown", function() {
-//   let boxArr = document.getElementsByClassName("box");
-//   for (let i = 0; i < boxArr.length; i++) {
-//     boxArr[i].addEventListener("mouseover", deleteColor);
-//   }
+//fill color button & function
+let fillButton = document.createElement("button");
+fillButton.id = "fill";
+fillButton.innerHTML = "Fill";
+colorPicker.appendChild(fillButton);
+fillButton.addEventListener("click", fillColor);
 
-// //   this.style.background = "none";
-//   //   savedColor = "none";
-// });
+function fillColor() {
+  let boxArr = document.getElementsByClassName("box");
+  for (let i = 0; i < boxArr.length; i++) {
+    boxArr[i].style.background = savedColor;
+  }
+}
 
-// box.addEventListener("mouseup", function() {
-//   let boxArr = document.getElementsByClassName("box");
-//   for (let i = 0; i < boxArr.length; i++) {
-//     boxArr[i].removeEventListener("mouseover", deleteColor);
-//   }
-// });
+let savedImage = [];
 
-function deleteColor() {
-  savedColor = "none";
+//save button & function
+let saveButton = document.createElement("button");
+saveButton.id = "save";
+saveButton.innerHTML = "Save";
+colorPicker.appendChild(saveButton);
+saveButton.addEventListener("click", saveImage);
+
+function saveImage() {
+  let boxArr = document.getElementsByClassName("box");
+  for (let i = 0; i < boxArr.length; i++) {
+    savedImage[i] = boxArr[i].style.backgroundColor;
+  }
+}
+
+//load button & function
+let loadButton = document.createElement("button");
+loadButton.id = "load";
+loadButton.innerHTML = "Load";
+colorPicker.appendChild(loadButton);
+loadButton.addEventListener("click", loadImage);
+
+function loadImage() {
+  let boxArr = document.getElementsByClassName("box");
+  for (let i = 0; i < boxArr.length; i++) {
+    boxArr[i].style.backgroundColor = savedImage[i];
+  }
 }
