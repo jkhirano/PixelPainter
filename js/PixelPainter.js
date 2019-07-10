@@ -5,13 +5,13 @@ let canvas = document.createElement("div");
 canvas.id = "canvas";
 pixelPainter.appendChild(canvas);
 
-//rows
+//canvas rows
 for (x = 0; x < 40; x++) {
   let row = document.createElement("div");
   row.className = "row";
   canvas.appendChild(row);
 
-  //boxes
+  //canvas boxes
   for (y = 0; y < 40; y++) {
     let box = document.createElement("div");
     box.className = "box";
@@ -66,13 +66,13 @@ let colors = [
   "black"
 ];
 
-//row
+//color picker row
 for (z = 0; z < 10; z++) {
   let colorRow = document.createElement("div");
   colorRow.className = "colorRow";
   colorPicker.appendChild(colorRow);
 
-  //boxes
+  //color picker boxes
   for (a = 0; a < 2; a++) {
     let colorBox = document.createElement("div");
     colorBox.className = "colorBox";
@@ -101,13 +101,17 @@ function clearCanvas() {
   }
 }
 
-//delete button & function
-let deleteButton = document.createElement("button");
-deleteButton.id = "delete";
-deleteButton.innerHTML = "Delete";
-colorPicker.appendChild(deleteButton);
+//eraser button & function
+let eraseButton = document.createElement("button");
+eraseButton.id = "erase";
+eraseButton.innerHTML = "Erase";
+colorPicker.appendChild(eraseButton);
+eraseButton.style.background = "none";
+eraseButton.addEventListener("click", eraseColor);
 
-deleteButton.addEventListener("click", deleteColor);
+function eraseColor() {
+  savedColor = "white";
+}
 
 // deleteButton.addEventListener("mousedown", function() {
 //   let boxArr = document.getElementsByClassName("box");
