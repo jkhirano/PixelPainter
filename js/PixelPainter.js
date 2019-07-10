@@ -90,7 +90,7 @@ for (z = 0; z < 10; z++) {
 let clearButton = document.createElement("button");
 clearButton.id = "clear";
 clearButton.innerHTML = "Clear";
-colorPicker.appendChild(clearButton);
+canvas.appendChild(clearButton);
 
 clearButton.addEventListener("click", clearCanvas);
 
@@ -105,7 +105,7 @@ function clearCanvas() {
 let eraseButton = document.createElement("button");
 eraseButton.id = "erase";
 eraseButton.innerHTML = "Erase";
-colorPicker.appendChild(eraseButton);
+canvas.appendChild(eraseButton);
 eraseButton.addEventListener("click", eraseColor);
 
 function eraseColor() {
@@ -116,7 +116,7 @@ function eraseColor() {
 let fillButton = document.createElement("button");
 fillButton.id = "fill";
 fillButton.innerHTML = "Fill";
-colorPicker.appendChild(fillButton);
+canvas.appendChild(fillButton);
 fillButton.addEventListener("click", fillColor);
 
 function fillColor() {
@@ -132,7 +132,7 @@ let savedImage = [];
 let saveButton = document.createElement("button");
 saveButton.id = "save";
 saveButton.innerHTML = "Save";
-colorPicker.appendChild(saveButton);
+canvas.appendChild(saveButton);
 saveButton.addEventListener("click", saveImage);
 
 function saveImage() {
@@ -146,7 +146,7 @@ function saveImage() {
 let loadButton = document.createElement("button");
 loadButton.id = "load";
 loadButton.innerHTML = "Load";
-colorPicker.appendChild(loadButton);
+canvas.appendChild(loadButton);
 loadButton.addEventListener("click", loadImage);
 
 function loadImage() {
